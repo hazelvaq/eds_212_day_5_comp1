@@ -1,7 +1,47 @@
 ---
 title: "Day 5 Session 1"
-format: html
+format: 
+  html:
+    code-fold: true
+    code-summary: "Show me the code!"
 editor: visual
+execute: 
+  echo: true
+  warning: false
 ---
 
-## 
+-   Using warning: false can hide warning messages on render doc
+
+-   Echo is to hide the code
+
+-   Using code-fold: true and code-summary: "Show me the code!" will give the reader the option to show the code on a drop down button
+
+```{r}
+library(tidyverse)
+```
+
+## Explore Star Wars dataset
+
+-   Look at the first 6 lines
+
+    ```{r}
+    head(starwars)
+    ```
+
+-   Find the dimensions
+
+    ```{r}
+    dim(starwars)
+    ```
+
+-   Make histogram of characters heights
+
+    ```{r}
+    ggplot(data = starwars, aes(x = height)) + geom_histogram(color = 'red', fill = "forestgreen")
+    ```
+
+-   Make a scatterplot of height vs weight
+
+```{r}
+ggplot(data = starwars, aes(x = height, y = mass)) + geom_point()
+```
