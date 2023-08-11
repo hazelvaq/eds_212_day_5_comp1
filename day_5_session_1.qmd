@@ -43,5 +43,25 @@ library(tidyverse)
 -   Make a scatterplot of height vs weight
 
 ```{r}
-ggplot(data = starwars, aes(x = height, y = mass)) + geom_point()
+ggplot(data = starwars, aes(x = height, y = mass, color = eye_color)) + geom_point() + labs(title = "Starwars characters height vs weight", x = "Height(cm)", y = "Weight (kg)")
+```
+
+## Calculate Summary statistics 
+
+Use mean() function to find means.
+
+Use sd() function to find standard deviation
+
+```{r}
+# Remove NA values by adding na.rm = TRUE in mean function
+mean_height <- mean(starwars$height, na.rm = TRUE)
+mean_height
+
+```
+
+Find and store the standard deviation of characters heights
+
+```{r}
+sd_height <- sd(starwars$height, na.rm =TRUE)
+sd_height
 ```
